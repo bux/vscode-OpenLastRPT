@@ -58,7 +58,14 @@ export function activate(context: vscode.ExtensionContext) {
             // then show it
             vscode.window.showTextDocument(document, 1, false).then((editor) => {
                 // and move the cursor to the end
-                editor.selections = [new vscode.Selection(new vscode.Position(editor.document.lineCount, 0),new vscode.Position(editor.document.lineCount, 0))];
+
+                vscode.commands.executeCommand("cursorBottom");
+                vscode.commands.executeCommand("cursorMove", {
+                    to: "right",
+                    by: "wrappedLine",
+                    select: false,
+                    value: 1
+                });
             });
         });
 
