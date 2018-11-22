@@ -4,8 +4,8 @@ This extension allows quick opening of the last Arma 3 log file (`*.rpt`) using 
 
 ## Usage
 
-* Open the command menu (<kbd>Ctr/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>) and type "Open Last RPT".
-* Or press <kbd>Ctr/Cmd</kbd>+<kbd>Alt</kbd>+<kbd>r</kbd>
+* Open the command menu (<kbd>Ctrl/Cmd</kbd>+<kbd>Shift</kbd>+<kbd>p</kbd>) and type "Open Last RPT".
+* Or press <kbd>Ctrl/Cmd</kbd>+<kbd>Alt</kbd>+<kbd>r</kbd>
 
 ## Marketplace
 https://marketplace.visualstudio.com/items?itemName=bux578.vscode-openlastrpt

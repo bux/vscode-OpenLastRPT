@@ -16,10 +16,20 @@ export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand("extension.openLastRpt", () => {
         // The code you place here will be executed every time your command is executed
 
-        let baseFolderPath = path.join(process.env.LOCALAPPDATA, "Arma 3");
+        let baseFolderPath = "";
+        const configuredPath = vscode.workspace.getConfiguration().get("rpt.differentRptFolder", "");
+        if (configuredPath != "") {
+            baseFolderPath = configuredPath;
+        } else {
+            baseFolderPath = path.join(process.env.LOCALAPPDATA, "Arma 3");
+        }
 
         if (!fs.existsSync(baseFolderPath)) {
-            vscode.window.showErrorMessage("You don't have the expected Arma 3 folder at: " + baseFolderPath);
+            if (configuredPath != "") {
+                vscode.window.showErrorMessage("This folder doesn't exist: " + baseFolderPath);
+            } else {
+                vscode.window.showErrorMessage("You don't have the expected Arma 3 folder at: " + baseFolderPath);
+            }
             return;
         }
 
