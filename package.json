@@ -1,49 +1,62 @@
 {
-  "name": "vscode-openlastrpt",
-  "displayName": "Arma 3 - Open Last RPT",
-  "description": "Quickly opens the last Arma 3 log file (`*.rpt`).",
-  "version": "1.0.2",
-  "publisher": "bux578",
-  "engines": {
-    "vscode": "^1.5.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "license": "GNU GPLv2",
-  "icon": "images/icon.png",
-  "activationEvents": [
-    "onCommand:extension.openLastRpt"
-  ],
-  "main": "./out/src/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.openLastRpt",
-        "title": "Open Last RPT"
-      }
+    "name": "vscode-openlastrpt",
+    "displayName": "Arma 3 - Open Last RPT",
+    "description": "Quickly opens the last Arma 3 log file (`*.rpt`).",
+    "version": "1.0.2",
+    "publisher": "bux578",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Other"
     ],
-    "keybindings": [{
-        "command": "extension.openLastRpt",
-        "key": "ctrl+alt+r",
-        "mac": "cmd+alt+r"
-    }]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bux/vscode-OpenLastRPT.git"
-  },
-  "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "@types/mocha": "^2.2.32",
-    "@types/node": "^6.0.40",
-    "mocha": "^2.3.3",
-    "typescript": "^2.1.4",
-    "vscode": "^1.0.0"
-  }
+    "license": "GNU GPLv2",
+    "icon": "images/icon.png",
+    "activationEvents": [
+        "onCommand:extension.openLastRpt"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.openLastRpt",
+                "title": "Open Last RPT"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.openLastRpt",
+                "key": "ctrl+alt+r",
+                "mac": "cmd+alt+r"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Arma 3 - Open Last RPT",
+            "properties": {
+                "rpt.differentRptFolder": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Point to a different folder to search for Arma 3's RPT files"
+                }
+            }
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bux/vscode-OpenLastRPT.git"
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.32",
+        "@types/node": "^6.0.40",
+        "mocha": "^2.3.3",
+        "typescript": "^2.1.4",
+        "vscode": "^1.0.0"
+    }
 }
