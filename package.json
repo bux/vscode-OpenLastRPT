@@ -10,6 +10,8 @@
   "categories": [
     "Other"
   ],
+  "license": "GNU GPLv2",
+  "icon": "images/icon.png",
   "activationEvents": [
     "onCommand:extension.openLastRpt"
   ],
