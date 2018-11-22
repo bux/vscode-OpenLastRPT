@@ -1,6 +1,6 @@
 {
   "name": "vscode-openlastrpt",
-  "displayName": "Open Last RPT",
+  "displayName": "Arma 3 - Open Last RPT",
   "description": "Quickly opens the last Arma 3 log file (`*.rpt`).",
   "version": "1.0.1",
   "publisher": "bux578",
