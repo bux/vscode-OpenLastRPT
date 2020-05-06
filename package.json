@@ -40,7 +40,11 @@
                     "description": "Point to a different folder to search for Arma 3's RPT files"
                 }
             }
-        }
+        },
+        "languages": [{
+            "id": "log",
+            "extensions": [ ".rpt" ]
+        }]
     },
     "repository": {
         "type": "git",
