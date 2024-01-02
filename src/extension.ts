@@ -21,7 +21,16 @@ export function activate(context: vscode.ExtensionContext) {
         if (configuredPath != "") {
             baseFolderPath = configuredPath;
         } else {
-            baseFolderPath = path.join(process.env.LOCALAPPDATA, "Arma 3");
+            if (process.platform === "win32") {
+                baseFolderPath = path.join(process.env.LOCALAPPDATA, "Arma 3");
+            } else if (process.platform === "linux") {
+                // flatpak steam
+                baseFolderPath = path.join(process.env.HOME, ".var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/compatdata/107410/pfx/drive_c/users/steamuser/AppData/Local/Arma 3/");
+            } else if (process.platform === "darwin") {
+                // Assumed macos path, not tested, need confirmation from a mac user
+                baseFolderPath = path.join(process.env.HOME, "Library/Application Support/Steam/steamapps/common/Arma 3");
+            }
+            console.log("Using default path: " + baseFolderPath);
         }
 
         if (!fs.existsSync(baseFolderPath)) {
